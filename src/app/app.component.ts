@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Finalproject';
+  Kus = 0;
+  mnozstvo = 0;
+  Vysledok=0;
+  public pocitaj(){
+    this.Vysledok = this.Kus * this.mnozstvo;
+  }
+  public pracuj(){
+    alert("Hello");
+  }
 }
