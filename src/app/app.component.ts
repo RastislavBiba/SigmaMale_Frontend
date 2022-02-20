@@ -16,4 +16,16 @@ export class AppComponent {
   public pracuj(){
     alert("Hello");
   }
+
+  dec;
+  bin7;bin6;bin5;bin4;bin3;bin2;bin1;bin0;
+
+  public zmenCislo() {
+
+  }
+
+  public pridaj(){
+
+  }
+
 }
