@@ -7,4 +7,16 @@
     Spolu: <input [(ngModel)] = "Vysledok">
 
   <div><h1>Pokus</h1></div>
+
+  <div>
+    dec <input [(ngModel)]="dec" (change)="zmenCislo()">
+  </div>
+  <div>
+    <div style="margin-left: 30px;">7...6...5...4...3...2...1...0 </div>
+    bin <input [(ngModel)]="bin7" (change)="pridaj()" type="checkbox" > <input [(ngModel)]="bin6" (change)="pridaj()" type="checkbox"> <input [(ngModel)]="bin5" (change)="pridaj()" type="checkbox">
+    <input [(ngModel)]="bin4" (change)="pridaj()" type="checkbox"> <input [(ngModel)]="bin3" (change)="pridaj()" type="checkbox"> <input [(ngModel)]="bin2" (change)="pridaj()" type="checkbox">
+    <input [(ngModel)]="bin1" (change)="pridaj()" type="checkbox" > <input [(ngModel)]="bin0" (change)="pridaj()" type="checkbox">
+
+  </div>
+
 </div>
