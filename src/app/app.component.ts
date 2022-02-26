@@ -24,12 +24,16 @@ export class AppComponent {
   osoba = {id:"", name:"", contact:""};
   books: any[] = [];
   kniha = {id:"",name:"", author:"", available:""};
+  pozicka = {id:"",kniha:"", osoba:""};
+  pozicky: any[] = [];
+
   form: FormGroup;
 
 
   public pocitaj(){
     this.Vysledok = this.Kus * this.mnozstvo;
-  }
+
+  }np
   public pracuj(){
     alert("Hello");
   }
@@ -154,5 +158,11 @@ export class AppComponent {
     let k2 = {id: this.kniha.id, name: this.kniha.name, author: this.kniha.author, available: this.kniha.available}
     this.books.push(k2);
   }
+
+  public pridajVypozicku() {
+    let v2 = {id: this.pozicka.id, kniha: this.kniha, osoba: this.osoba}
+    this.pozicky.push(v2);
+  }
+
 }
 
