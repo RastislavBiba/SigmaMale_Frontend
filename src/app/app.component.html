@@ -13,10 +13,50 @@
   </div>
   <div>
     <div style="margin-left: 30px;">7...6...5...4...3...2...1...0 </div>
-    bin <input [(ngModel)]="bin7" (change)="pridaj()" type="checkbox" > <input [(ngModel)]="bin6" (change)="pridaj()" type="checkbox"> <input [(ngModel)]="bin5" (change)="pridaj()" type="checkbox">
-    <input [(ngModel)]="bin4" (change)="pridaj()" type="checkbox"> <input [(ngModel)]="bin3" (change)="pridaj()" type="checkbox"> <input [(ngModel)]="bin2" (change)="pridaj()" type="checkbox">
-    <input [(ngModel)]="bin1" (change)="pridaj()" type="checkbox" > <input [(ngModel)]="bin0" (change)="pridaj()" type="checkbox">
-
+    bin <input [(ngModel)]="bin7" (change)="pridajcheck()" type="checkbox" > <input [(ngModel)]="bin6" (change)="pridajcheck()" type="checkbox"> <input [(ngModel)]="bin5" (change)="pridajcheck()" type="checkbox">
+    <input [(ngModel)]="bin4" (change)="pridajcheck()" type="checkbox"> <input [(ngModel)]="bin3" (change)="pridajcheck()" type="checkbox"> <input [(ngModel)]="bin2" (change)="pridajcheck()" type="checkbox">
+    <input [(ngModel)]="bin1" (change)="pridajcheck()" type="checkbox" > <input [(ngModel)]="bin0" (change)="pridajcheck()" type="checkbox">
+    <br>
   </div>
 
 </div>
+  <br>
+  ------------------------------------------------------------------------------
+  <br>
+  Nazov projektu: {{title}} <br><br>
+<div>
+  <button class="but" (click)="nastavMenu(menu.OSOBY);">Users</button>
+  <button class="but" (click)="nastavMenu(menu.KNIHY);">Books</button>
+  <button class="but" (click)="nastavMenu(menu.VYPOZICKY);">Button</button>
+</div>
+<div *ngIf="aktMenu == menu.OSOBY">
+  <br>
+  id: <input [(ngModel)]="osoba.id"><br>
+  name: <input [(ngModel)]="osoba.name"><br>
+  contact: <input [(ngModel)]="osoba.contact"><br> <br>
+  <button class="but" (click)="pridaj();">Pridaj</button>
+  <br> <br>
+  zoznam: <br>
+  <div *ngFor="let o of persons">
+    {{o.id}} | {{o.name}} | {{o.contact}}
+  </div>
+</div>
+
+<div *ngIf="aktMenu == menu.KNIHY">
+  <br>
+  Id: <input [(ngModel)]="kniha.id"><br>
+  name: <input [(ngModel)]="kniha.name"> <br>
+  author: <input [(ngModel)]="kniha.author"> <br>
+  available: <input [(ngModel)]="kniha.available"> <br> <br>
+  <button class="but" style="align-content: center" (click)="pridajk();">Pridaj</button>
+  <br><br>
+  zoznam: <br>
+  <div *ngFor="let k of books">
+    {{k.id}} | {{k.name}} | {{k.author}} | {{k.available}}
+  </div>
+</div>
+
+<div *ngIf="aktMenu == menu.VYPOZICKY">
+  <h1>Vypozicky</h1>
+</div>
+

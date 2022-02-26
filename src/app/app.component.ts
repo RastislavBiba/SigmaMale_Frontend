@@ -1,4 +1,8 @@
+enum MENU{
+  OSOBY, KNIHY, VYPOZICKY
+}
 import { Component } from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +13,20 @@ export class AppComponent {
   Kus = 0;
   mnozstvo = 0;
   Vysledok=0;
+
+  menu = MENU;
+  aktMenu = MENU.OSOBY;
+
+  //vstup = 'qwe';
+  //zobraz = true;
+  zakaz = false;
+  persons: any[] = [];
+  osoba = {id:"", name:"", contact:""};
+  books: any[] = [];
+  kniha = {id:"",name:"", author:"", available:""};
+  form: FormGroup;
+
+
   public pocitaj(){
     this.Vysledok = this.Kus * this.mnozstvo;
   }
@@ -86,7 +104,7 @@ export class AppComponent {
     }
   };
 
-  public pridaj(){
+  public pridajcheck(){
     this.Binary = "";
     const bin = [this.bin7, this.bin6, this.bin5, this.bin4, this.bin3, this.bin2, this.bin1, this.bin0];
     for (let i =0; i <= 7; i++) {
@@ -97,4 +115,44 @@ export class AppComponent {
     this.dec = parseInt(this.Binary ,2);
 
   };
+
+  constructor() {
+    this.form = new FormGroup({
+      cenaks: new FormControl(),
+      mnozstvo: new FormControl(),
+    });
+  }
+  //public pocitaj(){
+  //  this.Vysledok = this.Kus * this.mnozstvo;
+ // }
+ // public pracuj(): void{
+ //   alert("test");
+ // }
+  //public ukazTo(): void{
+  //  alert("Hura");
+  //}
+  public test(){
+    this.zakaz = !this.zakaz;
+  }
+  public nastavMenu(m: MENU){
+    this.aktMenu = m;
+  }
+  public osoby(){
+    this.aktMenu = MENU.OSOBY;
+  }
+  public knihy(){
+    this.aktMenu = MENU.KNIHY;
+  }
+  public vypozicky(){
+    this.aktMenu = MENU.VYPOZICKY;
+  }
+  public pridaj(){
+    let o2 = {id: this.osoba.id, name: this.osoba.name, contact: this.osoba.contact}
+    this.persons.push(o2);
+  }
+  public pridajk(){
+    let k2 = {id: this.kniha.id, name: this.kniha.name, author: this.kniha.author, available: this.kniha.available}
+    this.books.push(k2);
+  }
 }
+
