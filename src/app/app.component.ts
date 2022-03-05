@@ -1,3 +1,5 @@
+import {Router} from "@angular/router";
+
 enum MENU{
   OSOBY, KNIHY, VYPOZICKY
 }
@@ -17,6 +19,8 @@ export class AppComponent {
   menu = MENU;
   aktMenu = MENU.OSOBY;
 
+
+
   //vstup = 'qwe';
   //zobraz = true;
   zakaz = false;
@@ -29,11 +33,10 @@ export class AppComponent {
 
   form: FormGroup;
 
-
   public pocitaj(){
     this.Vysledok = this.Kus * this.mnozstvo;
 
-  }np
+  }
   public pracuj(){
     alert("Hello");
   }
@@ -120,7 +123,7 @@ export class AppComponent {
 
   };
 
-  constructor() {
+  constructor(private router: Router) {
     this.form = new FormGroup({
       cenaks: new FormControl(),
       mnozstvo: new FormControl(),
@@ -140,6 +143,15 @@ export class AppComponent {
   }
   public nastavMenu(m: MENU){
     this.aktMenu = m;
+
+    // preroutuj do komponenty podla menu
+    if (m == MENU.OSOBY) {
+      this.router.navigate(['/osoba']);
+    }
+    if (m == MENU.KNIHY) {
+      this.router.navigate(['/kniha']);
+    }
+
   }
   public osoby(){
     this.aktMenu = MENU.OSOBY;

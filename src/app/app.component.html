@@ -27,8 +27,14 @@
 <div>
   <button class="but" (click)="nastavMenu(menu.OSOBY);">Users</button>
   <button class="but" (click)="nastavMenu(menu.KNIHY);">Books</button>
-  <button class="but" (click)="nastavMenu(menu.VYPOZICKY);">Button</button>
+  <button class="but" (click)="nastavMenu(menu.VYPOZICKY);">Borrowings</button>
 </div>
+<div>
+
+  <router-outlet></router-outlet>
+
+</div>
+
 <div *ngIf="aktMenu == menu.OSOBY">
   <br>
   id: <input [(ngModel)]="osoba.id"><br>
