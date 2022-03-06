@@ -13,6 +13,7 @@ import {KnihaStrankaComponent} from "./kniha-stranka/kniha-stranka.component";
 import { VypozickaFormularComponent } from './vypozicka-formular/vypozicka-formular.component';
 import { VypozickyZoznamComponent } from './vypozicky-zoznam/vypozicky-zoznam.component';
 import { VypozickyStrankaComponent } from './vypozicky-stranka/vypozicky-stranka.component';
+import {KnihaZoznamComponent} from "./kniha-zoznam/kniha-zoznam.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { VypozickyStrankaComponent } from './vypozicky-stranka/vypozicky-stranka
     VypozickaFormularComponent,
     VypozickyZoznamComponent,
     VypozickyStrankaComponent,
-    //KnihyZoznamComponent,
+    KnihaZoznamComponent
   ],
     imports: [
         BrowserModule,

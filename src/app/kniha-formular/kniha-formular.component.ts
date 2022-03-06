@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import {Kniha} from "../models/kniha.model";
 
 @Component({
   selector: 'app-kniha-formular',
   templateUrl: './kniha-formular.component.html',
   styleUrls: ['./kniha-formular.component.css']
 })
-export class KnihaFormularComponent implements OnInit {
+export class KnihaFormularComponent{
 
-  constructor() { }
+  kniha: Kniha = {id: 123, meno_knihy: 'bbb', autor: 'ccc'}
 
-  ngOnInit(): void {
+  constructor() {
   }
+
+
+
 
 }

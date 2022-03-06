@@ -144,12 +144,12 @@ export class AppComponent {
     this.aktMenu = m;
 
     // preroutuj do komponenty podla menu
-    if (m == MENU.OSOBY) {
+    /*if (m == MENU.OSOBY) {
       this.router.navigate(['/osoba']);
     }
     if (m == MENU.KNIHY) {
       this.router.navigate(['/kniha']);
-    }
+    }*/
 
   }
   public osoby(){
@@ -178,6 +178,12 @@ export class AppComponent {
     // preroutuj do komponenty podla menu
     if (m == MENU.OSOBY) {
       this.router.navigate(['/osoba']);
+    }
+    if (m == MENU.KNIHY) {
+      this.router.navigate(['/kniha']);
+    }
+    if (m == MENU.VYPOZICKY) {
+      this.router.navigate(['/vypozicka']);
     }
   }
 }
