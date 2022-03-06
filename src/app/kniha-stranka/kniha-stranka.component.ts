@@ -6,5 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kniha-stranka.component.css']
 })
 export class KnihaStrankaComponent {
-
+  books: any[] = [];
 }

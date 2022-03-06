@@ -1,10 +1,10 @@
 import {Router} from "@angular/router";
-
+import { Component } from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 enum MENU{
   OSOBY, KNIHY, VYPOZICKY
 }
-import { Component } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,8 +19,6 @@ export class AppComponent {
   menu = MENU;
   aktMenu = MENU.OSOBY;
 
-
-
   //vstup = 'qwe';
   //zobraz = true;
   zakaz = false;
@@ -32,6 +30,7 @@ export class AppComponent {
   pozicky: any[] = [];
 
   form: FormGroup;
+
 
   public pocitaj(){
     this.Vysledok = this.Kus * this.mnozstvo;
@@ -175,6 +174,11 @@ export class AppComponent {
     let v2 = {id: this.pozicka.id, kniha: this.kniha, osoba: this.osoba}
     this.pozicky.push(v2);
   }
-
+  otvorMenu(m: MENU) {
+    // preroutuj do komponenty podla menu
+    if (m == MENU.OSOBY) {
+      this.router.navigate(['/osoba']);
+    }
+  }
 }
 

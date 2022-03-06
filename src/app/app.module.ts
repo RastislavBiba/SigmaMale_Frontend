@@ -10,6 +10,9 @@ import {RouterModule} from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
 import { KnihaFormularComponent } from './kniha-formular/kniha-formular.component';
 import {KnihaStrankaComponent} from "./kniha-stranka/kniha-stranka.component";
+import { VypozickaFormularComponent } from './vypozicka-formular/vypozicka-formular.component';
+import { VypozickyZoznamComponent } from './vypozicky-zoznam/vypozicky-zoznam.component';
+import { VypozickyStrankaComponent } from './vypozicky-stranka/vypozicky-stranka.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import {KnihaStrankaComponent} from "./kniha-stranka/kniha-stranka.component";
     OsobaStrankaComponent,
     KnihaFormularComponent,
     KnihaStrankaComponent,
+    VypozickaFormularComponent,
+    VypozickyZoznamComponent,
+    VypozickyStrankaComponent,
     //KnihyZoznamComponent,
   ],
     imports: [

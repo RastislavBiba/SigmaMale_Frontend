@@ -73,5 +73,16 @@
   <div *ngFor="let p of pozicky">
     {{p.id}} | {{p.kniha}} | {{p.osoba}}
   </div>
+  <br>
+</div>
+<div>
+  Nazov:{{title}} <br>
+  <button (click)="otvorMenu(menu.OSOBY)">osoby</button>
+  <button (click)="otvorMenu(menu.KNIHY)">knihy</button>
+  <button (click)="otvorMenu(menu.VYPOZICKY)">vypozicky</button>
+  <br>
+  <br>
+  <router-outlet></router-outlet>
+
 </div>
 
