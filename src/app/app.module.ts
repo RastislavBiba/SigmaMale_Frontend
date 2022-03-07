@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { OsobaFormularComponent } from './osoba-formular/osoba-formular.component';
 import { OsobyZoznamComponent } from './osoby-zoznam/osoby-zoznam.component';
 import { OsobaStrankaComponent } from './osoba-stranka/osoba-stranka.component';
@@ -28,12 +28,13 @@ import {KnihaZoznamComponent} from "./kniha-zoznam/kniha-zoznam.component";
     VypozickyStrankaComponent,
     KnihaZoznamComponent
   ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        RouterModule,
-        AppRoutingModule
-    ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule,
+    AppRoutingModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

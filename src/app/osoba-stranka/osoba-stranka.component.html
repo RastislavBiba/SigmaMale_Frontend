@@ -1,4 +1,4 @@
 
-<app-osoba-formular></app-osoba-formular>
+<app-osoba-formular [osoba]="aktOsoba" (pridajOsobu)="pridaj($event)" (upravOsobu)="uprav($event)"></app-osoba-formular>
 
-<app-osoby-zoznam></app-osoby-zoznam>
+<app-osoby-zoznam [osoby]="osoby" (upravOsobu)="upravZoZoznamu($event)"></app-osoby-zoznam>

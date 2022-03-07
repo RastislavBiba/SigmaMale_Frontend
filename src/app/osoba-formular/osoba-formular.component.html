@@ -1,5 +1,10 @@
+<form [formGroup]="formular" >
 
-meno:
-<input [(ngModel)]="osoba.meno"><br>
+<input formControlName="meno"><br>
 priezvisko:
-<input [(ngModel)]="osoba.priezvisko"><br>
+<input formControlName="priezvisko"><br>
+
+
+<button (click)="pridaj()">pridaj</button>
+<button (click)="uprav()">uprav</button>
+</form>
