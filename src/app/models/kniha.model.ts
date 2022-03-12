@@ -1,6 +1,6 @@
 export class Kniha {
 
-  id: number;
+  id?: string;
   meno_knihy: string;
   autor: string;
 

@@ -1,7 +1,12 @@
+<form [formGroup]="formular" >
 
-Id: <input [(ngModel)]="kniha.id"><br>
-name: <input [(ngModel)]="kniha.meno_knihy"> <br>
-author: <input [(ngModel)]="kniha.autor"> <br>
+  nazov knihy:
+  <input formControlName="meno_knihy"><br>
+  autor:
+  <input formControlName="autor"><br>
 
 
+  <button (click)="pridaj()">pridaj</button>
+  <button (click)="uprav()">uprav</button>
+</form>
 

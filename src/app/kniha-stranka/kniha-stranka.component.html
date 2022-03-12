@@ -1,6 +1,4 @@
-<div *ngFor="let k of books">
-  {{k.id}} | {{k.name}} | {{k.author}} | {{k.available}}
-</div>
-<app-kniha-formular></app-kniha-formular>
 
+<app-kniha-formular [kniha]="aktKniha" (pridajKnihu)="pridaj($event)" (upravKnihu)="uprav($event)"></app-kniha-formular>
 
+<app-kniha-zoznam [books]="books" (upravKnihu)="upravZoZoznamu($event)"></app-kniha-zoznam>

@@ -1,5 +1,6 @@
-import { Component} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Kniha} from "../models/kniha.model";
+import {Osoba} from "../models/osoba.model";
 
 @Component({
   selector: 'app-kniha-zoznam',
@@ -7,7 +8,19 @@ import {Kniha} from "../models/kniha.model";
   styleUrls: ['./kniha-zoznam.component.css']
 })
 export class KnihaZoznamComponent {
-  kniha: Kniha[] = []
+
+
+
+  @Input()
+  books: Kniha[] = []
+
+  @Output()
+  upravKnihu: EventEmitter<Kniha> = new EventEmitter<Kniha>();
   constructor() { }
+
+
+  uprav(kniha: Kniha):void {
+    this.upravKnihu.emit(kniha);
+  }
 
 }
