@@ -1,12 +1,19 @@
-<form [formGroup]="formular" >
+<h1>Knihy - formular</h1>
 
-  nazov knihy:
-  <input formControlName="meno_knihy"><br>
-  autor:
-  <input formControlName="autor"><br>
+<form [formGroup]="formular">
 
+  <label>Meno Knihy:
+    <input formControlName="meno_knihy">
+  </label>
+  <br>
 
-  <button (click)="pridaj()">pridaj</button>
-  <button (click)="uprav()">uprav</button>
+  <label>Autor:
+    <input formControlName="autor">
+  </label>
+  <br>
+
+  <button (click)="pridaj()" *ngIf="formular.value.id === null">pridaj</button>
+  <button (click)="uprav()" *ngIf="formular.value.id !== null">uprav</button>
+  <button (click)="zrus()">zrus</button>
+
 </form>
-

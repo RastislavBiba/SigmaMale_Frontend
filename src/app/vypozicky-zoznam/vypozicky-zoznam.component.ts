@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Vypozicka} from "../models/vypozicka.model";
+
 
 @Component({
   selector: 'app-vypozicky-zoznam',
@@ -7,7 +8,21 @@ import {Vypozicka} from "../models/vypozicka.model";
   styleUrls: ['./vypozicky-zoznam.component.css']
 })
 export class VypozickyZoznamComponent {
-  vypozicka: Vypozicka[] = []
-  constructor() { }
 
+  @Input()
+  vypozicky: Vypozicka[] = []
+
+  @Output()
+  upravVypozicku: EventEmitter<Vypozicka> = new EventEmitter<Vypozicka>();
+
+  @Output()
+  zmazVypozicku: EventEmitter<Vypozicka> = new EventEmitter<Vypozicka>();
+
+  uprav(vypozicka: Vypozicka): void {
+    this.upravVypozicku.emit(vypozicka);
+  }
+
+  zmaz(vypozicka: Vypozicka): void {
+    this.zmazVypozicku.emit(vypozicka);
+  }
 }

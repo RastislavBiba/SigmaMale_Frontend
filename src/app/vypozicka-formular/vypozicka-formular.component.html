@@ -1,3 +1,19 @@
-id: <input [(ngModel)]="vypozicka.id"><br>
-book: <input [(ngModel)]="vypozicka.kniha"><br>
-user: <input [(ngModel)]="vypozicka.osoba"><br> <br>
+<h1>Vypozicky - formular</h1>
+
+<form [formGroup]="formular">
+
+  <label>Kniha:
+    <input formControlName="kniha">
+  </label>
+  <br><br>
+
+  <label>Uzivatel:
+    <input formControlName="osoba">
+  </label>
+  <br> <br>
+
+  <button (click)="pridaj()" *ngIf="formular.value.id === null">pridaj</button>
+  <button (click)="uprav()" *ngIf="formular.value.id !== null">uprav</button>
+  <button (click)="zrus()">zrus</button>
+
+</form>

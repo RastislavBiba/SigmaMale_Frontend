@@ -1,4 +1,19 @@
+<br>
+<h1 class=" d-flex justify-content-center ">Vypozicky</h1>
+<app-vypozicka-formular [vypozicky]="vypozickaNaUpravu"
+                    (pridajVypozicku)="pridaj($event)"
+                    (upravVypozicku)="uprav($event)" >
+</app-vypozicka-formular>
 
-<app-vypozicka-formular></app-vypozicka-formular>
+<app-vypozicky-zoznam [vypozicky]="vypozicky"
+                  (upravVypozicku)="uprav($event)"
+                  (zmazVypozicku)="zmazZoZoznamu($event)">
+</app-vypozicky-zoznam>
 
-<app-vypozicky-zoznam></app-vypozicky-zoznam>
+<br>
+
+<div>
+  <button (click)="chodSpat()">SPÄŤ</button>
+</div>
+
+

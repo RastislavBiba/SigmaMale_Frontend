@@ -1,4 +1,27 @@
-<div *ngFor="let o of osoby">
-  {{o.meno}} {{o.priezvisko}}
-  <button (click)="uprav(o)">uprav</button>
+<h1>Osoby - zoznam</h1>
+
+<div *ngIf="!osoby || osoby?.length === 0">
+  Zoznam osôb je prázdny.
 </div>
+
+
+<table class="table" *ngIf="osoby.length > 0">
+  <thead>
+  <tr>
+    <th>Meno</th>
+    <th>Priezvisko</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let osoba of osoby">
+    <td>{{ osoba.meno }}</td>
+    <td>{{ osoba.priezvisko }}</td>
+    <td>
+      <button (click)="uprav(osoba)">Upraviť</button>
+      <button (click)="zmaz(osoba)">Zmazať</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

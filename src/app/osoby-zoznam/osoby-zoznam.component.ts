@@ -1,23 +1,27 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Osoba} from "../models/osoba.model";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Osoba} from '../models/osoba.model';
 
 @Component({
   selector: 'app-osoby-zoznam',
-  templateUrl: './osoby-zoznam.component.html',
-  styleUrls: ['./osoby-zoznam.component.css']
+  templateUrl: 'osoby-zoznam.component.html',
+  styleUrls: ['osoby-zoznam.component.css']
 })
 export class OsobyZoznamComponent {
 
-
   @Input()
-  osoby: Osoba[] = []
+  osoby: Osoba[] = [];
 
   @Output()
   upravOsobu: EventEmitter<Osoba> = new EventEmitter<Osoba>();
-  constructor() { }
 
+  @Output()
+  zmazOsobu: EventEmitter<Osoba> = new EventEmitter<Osoba>();
 
-  uprav(osoba: Osoba):void {
+  uprav(osoba: Osoba): void {
     this.upravOsobu.emit(osoba);
+  }
+
+  zmaz(osoba: Osoba): void {
+    this.zmazOsobu.emit(osoba);
   }
 }

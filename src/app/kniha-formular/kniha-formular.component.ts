@@ -1,19 +1,14 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Kniha} from "../models/kniha.model";
-import {Osoba} from "../models/osoba.model";
 import {FormControl, FormGroup} from "@angular/forms";
+
 
 @Component({
   selector: 'app-kniha-formular',
-  templateUrl: './kniha-formular.component.html',
-  styleUrls: ['./kniha-formular.component.css']
+  templateUrl: 'kniha-formular.component.html',
+  styleUrls: ['kniha-formular.component.css']
 })
 export class KnihaFormularComponent{
-
-  //kniha: Kniha = {id: 123, meno_knihy: 'bbb', autor: 'ccc'}
-
-
-
 
 
   @Output()
@@ -22,20 +17,21 @@ export class KnihaFormularComponent{
   upravKnihu = new EventEmitter<Kniha>();
 
   @Input()
-  set kniha(k: Kniha){
-    if(k){
-      this.formular.patchValue({id: k.id,meno_knihy: k.meno_knihy,autor: k.autor})
+  set kniha(k: Kniha | undefined) {
+    if (k) {
+      this.naplnForm(k)
     }
   }
-
-  //osoba: Osoba = { meno: 'aaa', priezvisko: 'bbb' }
 
   formular:FormGroup;
 
   constructor() {
-    this.formular = new FormGroup({id: new FormControl(null), meno_knihy: new FormControl(null),autor: new FormControl(null)});
+    this.formular = new FormGroup({
+      id: new FormControl(null),
+      meno_knihy: new FormControl(null),
+      autor: new FormControl(null)
+    });
   }
-
   public pridaj(): void {
 
     this.pridajKnihu.emit({id: Math.random().toString(),meno_knihy: this.formular.value.meno_knihy, autor: this.formular.value.autor});
@@ -50,8 +46,13 @@ export class KnihaFormularComponent{
     //this.osoba.priezvisko="";
     this.formular.reset();
   }
+  public zrus(): void {
+    this.formular.reset();
+  }
+  private naplnForm(kniha: Kniha): void {
 
-
-
-
+    this.formular.controls['id'].setValue(kniha.id);
+    this.formular.controls['meno_knihy'].setValue(kniha.meno_knihy);
+    this.formular.controls['autor'].setValue(kniha.autor);
+  }
 }

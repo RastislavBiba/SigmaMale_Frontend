@@ -1,4 +1,19 @@
+<br>
+<h1 class=" d-flex justify-content-center ">Osoby</h1>
+<app-osoba-formular [osoba]="osobaNaUpravu"
+                    (pridajOsobu)="pridaj($event)"
+                    (upravOsobu)="uprav($event)" >
+</app-osoba-formular>
 
-<app-osoba-formular [osoba]="aktOsoba" (pridajOsobu)="pridaj($event)" (upravOsobu)="uprav($event)"></app-osoba-formular>
+<app-osoby-zoznam [osoby]="osoby"
+                  (upravOsobu)="upravZoZoznamu($event)"
+                  (zmazOsobu)="zmazZoZoznamu($event)">
+</app-osoby-zoznam>
 
-<app-osoby-zoznam [osoby]="osoby" (upravOsobu)="upravZoZoznamu($event)"></app-osoby-zoznam>
+<br>
+
+<div>
+  <button (click)="chodSpat()">SPÄŤ</button>
+</div>
+
+

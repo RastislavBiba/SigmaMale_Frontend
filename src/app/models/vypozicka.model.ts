@@ -1,7 +1,8 @@
 export class Vypozicka{
-  id: number;
+  id?: string;
   osoba: string;
   kniha: string;
+
 
 
   constructor(vypozicka: Vypozicka) {

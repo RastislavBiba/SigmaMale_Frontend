@@ -1,4 +1,27 @@
-<div *ngFor="let k of books">
-  {{k.meno_knihy}} | {{k.autor}}
-  <button (click)="uprav(k)">uprav</button>
+<h1>Osoby - zoznam</h1>
+
+<div *ngIf="!books || books?.length === 0">
+  Zoznam knih je prázdny.
 </div>
+
+
+<table class="table" *ngIf="books.length > 0">
+  <thead>
+  <tr>
+    <th>Nazov knihy</th>
+    <th>Autor</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let book of books">
+    <td>{{ book.meno_knihy }}</td>
+    <td>{{ book.autor }}</td>
+    <td>
+      <button (click)="uprav(book)">Upraviť</button>
+      <button (click)="zmaz(book)">Zmazať</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

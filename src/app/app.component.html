@@ -1,4 +1,4 @@
-<div>
+<!--<div>
   Nazov projektu: {{title}} <br>
 </div>
 <div>
@@ -75,14 +75,17 @@
   </div>
   <br>
 </div>
-<div>
-  Nazov:{{title}} <br>
-  <button (click)="otvorMenu(menu.OSOBY)">osoby</button>
-  <button (click)="otvorMenu(menu.KNIHY)">knihy</button>
-  <button (click)="otvorMenu(menu.VYPOZICKY)">vypozicky</button>
+-->
+<div class="row">
+  <h1 style="text-align: center"> Nazov: {{title}} </h1><br>
+  <div class=" d-flex justify-content-center ">
+    <button type="button" class="cold-grid btn btn-outline-dark col-1" (click)="otvorMenu(menu.OSOBY)">osoby</button>
+    <button type="button" class="cold-grid btn btn-outline-dark col-1" (click)="otvorMenu(menu.KNIHY)">knihy</button>
+    <button type="button" class="cold-grid btn btn-outline-dark col-1" (click)="otvorMenu(menu.VYPOZICKY)">vypozicky</button>
+  </div>
   <br>
   <br>
-  <router-outlet></router-outlet>
-
 </div>
-
+<div class="d-flex justify-content-center">
+<router-outlet></router-outlet>
+</div>

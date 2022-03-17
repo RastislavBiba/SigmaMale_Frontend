@@ -1,10 +1,19 @@
-<form [formGroup]="formular" >
+<h1>Osoby - formular</h1>
 
-<input formControlName="meno"><br>
-priezvisko:
-<input formControlName="priezvisko"><br>
+<form [formGroup]="formular">
 
+  <label>Meno:
+    <input formControlName="meno">
+  </label>
+  <br>
 
-<button (click)="pridaj()">pridaj</button>
-<button (click)="uprav()">uprav</button>
+  <label>Priezvisko:
+    <input formControlName="priezvisko">
+  </label>
+  <br>
+
+  <button (click)="pridaj()" *ngIf="formular.value.id === null">pridaj</button>
+  <button (click)="uprav()" *ngIf="formular.value.id !== null">uprav</button>
+  <button (click)="zrus()">zrus</button>
+
 </form>

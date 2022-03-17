@@ -1,5 +1,4 @@
 export class Osoba {
-
   id?: string;
   meno: string;
   priezvisko: string;
@@ -9,5 +8,4 @@ export class Osoba {
     this.meno = osoba.meno;
     this.priezvisko = osoba.priezvisko;
   }
-
 }
