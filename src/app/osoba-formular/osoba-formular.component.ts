@@ -66,6 +66,7 @@ export class OsobaFormularComponent {
     this.formular.controls['priezvisko'].setValue(osoba.priezvisko);
   }
 
+  //dokoncenie buducu hodinu
   spracujSubor(files: any) {
     let fs: FileList = files.target.files;
     console.log('mam, posiela...',files.target.files);
