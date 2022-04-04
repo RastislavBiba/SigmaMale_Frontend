@@ -12,6 +12,11 @@
   </label>
   <br>
 
+  <label for="subor">
+    Foto
+    <input type="file" id="subor" (change)="spracujSubor($event)">
+  </label>
+
   <button (click)="pridaj()" *ngIf="formular.value.id === null">pridaj</button>
   <button (click)="uprav()" *ngIf="formular.value.id !== null">uprav</button>
   <button (click)="zrus()">zrus</button>

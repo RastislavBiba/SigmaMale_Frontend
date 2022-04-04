@@ -66,4 +66,10 @@ export class OsobaFormularComponent {
     this.formular.controls['priezvisko'].setValue(osoba.priezvisko);
   }
 
-}
+  spracujSubor(files: any) {
+    let fs: FileList = files.target.files;
+    console.log('mam, posiela...',files.target.files);
+    let subor = fs.item.(0);
+    //this.osobaService.nahrajSubor(subor).subscribe()
+
+  }
